@@ -1,0 +1,59 @@
+.container {
+    background: #efffec;
+
+    .title {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            width: 80%;
+            text-align: center;
+        }
+    }
+
+    .menu-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 50px;
+        gap: 50px;
+
+        .menu-item {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+
+
+            .pic {
+                flex: 1;
+            }
+
+            .about {
+                flex: 2;
+                gap: 10px;
+                display: flex;
+                flex-direction: column;
+                padding: 20px 10px;
+
+                h5 {
+                    font-size: 18px;
+                }
+
+                p {
+                    font-weight: bold;
+
+                    span {
+                        font-weight: normal;
+                    }
+                }
+
+                h6 {
+                    font-size: 12px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}

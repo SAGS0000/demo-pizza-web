@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 80px;
+    border-bottom: 1px solid #454545;
+
+    .links {
+        display: flex;
+        gap: 20px;
+
+        a {
+            text-decoration: none;
+            color: gray;
+        }
+
+        .active {
+            // font-size: 20px;
+            transform: scale(1.5);
+            transition: all 0.3s ease-in-out;
+            font-weight: 400;
+            color: black
+        }
+    }
+}
