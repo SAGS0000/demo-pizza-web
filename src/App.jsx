@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/_Home/Home';
 import Menu from './pages/_Menu/Menu';
 import About from './pages/_About/About';
+import ItemInfo from './pages/_Menu/ItemInfo';
 
 const App = () => {
     return (
@@ -13,6 +14,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/menu" element={<Menu />} />
+                    <Route path="/product/:id?" element={<ItemInfo />} />
+
                     <Route path="/about" element={<About />} />
                 </Routes>
             </BrowserRouter>

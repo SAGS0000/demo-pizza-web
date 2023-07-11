@@ -1,7 +1,9 @@
 import React from 'react';
 import './menu.scss';
 import { ITEM } from './items';
+import { useNavigate } from 'react-router-dom';
 const Menu = () => {
+    const navigate = useNavigate();
     return (
         <div className="container">
             <div className='title'>
@@ -10,16 +12,21 @@ const Menu = () => {
             </div>
             <div className="menu-container">
                 {ITEM.map(item =>
-                    <div key={item.id} className="menu-item">
+                    <div
+                        key={item.id}
+                        className="menu-item"
+                        onClick={() => { navigate(`/product/${item.id}?`, { state: { item } }); }}
+                    >
 
                         <div className="pic"
                             style={{ background: 'red' }}>
+                            <img src="https://media.istockphoto.com/id/521403691/photo/hot-homemade-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=PaISuuHcJWTEVoDKNnxaHy7L2BTUkyYZ06hYgzXmTbo=" alt="" />
 
                         </div>
                         <div className='about'>
                             <h5>{item.name}</h5>
                             <p>Price: <span>{item.price}</span></p>
-                            <h6>{item.about}</h6>
+                            {/* <h6>{item.about}</h6> */}
                         </div>
                     </div>)}
             </div>

@@ -1,0 +1,97 @@
+.container-item {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    background-image: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?cs=srgb&dl=pexels-pixabay-326333.jpg&fm=jpg');
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+
+    .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        overflow: hidden;
+        // border: 1px solid green;
+        width: 100%;
+        min-height: 100vh;
+        padding: 50px;
+
+        .pic {
+            background-color: black;
+            border-radius: 10px;
+            overflow: hidden;
+            // flex: 1;
+            border-radius: 10px;
+
+            img {
+                // height: 100%;
+                width: 600px;
+            }
+        }
+
+        .about {
+            // flex: 2;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba($color: black, $alpha: .5);
+            color: white;
+            justify-content: space-between;
+            // align-items: start;
+            height: 350px;
+            border-radius: 0 10px 10px 0;
+            padding: 10px;
+            position: relative;
+
+            p {
+                width: 80%;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+                margin-bottom: 20px;
+
+                span {
+                    font-weight: 200;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                color: rgb(194, 194, 194);
+            }
+
+            .row {
+                // align-items: end;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                margin: 10px;
+
+                button {
+                    cursor: pointer;
+                    border-radius: 10px;
+                    outline: 0;
+                    border: 0;
+                    padding: 15px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: white;
+                    background-color: rgb(255, 104, 104);
+
+                }
+            }
+        }
+    }
+}
