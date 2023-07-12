@@ -1,5 +1,7 @@
 .cart-container {
     // background-color: rgb(198, 198, 198);
+    background-image: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?cs=srgb&dl=pexels-pixabay-326333.jpg&fm=jpg');
+
     padding-top: 3.2rem;
     height: 100vh;
     display: flex;
@@ -54,21 +56,47 @@
                 height: 100%;
 
 
-                h1 {
-                    padding-inline: 10px;
-                    font-size: 28px;
-                    font-weight: 400;
-                    flex: 3;
+
+
+                input {
+                    outline: 0;
+                    border: 0;
+                    width: 50%;
+                    // borderRadius: '4px 2px 2px 4px',
+                    padding: 0.1ex 1ex;
+                    margin-right: 4;
+                    display: block;
+                    font-weight: 100;
+                    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+                    padding: 5px;
+                    font-size: 18px;
+
+                    &:hover {
+                        border: 1px solid #ccc;
+
+                    }
+
+
+
                 }
 
-                .quantity {
-                    background: red;
-                    width: 200px;
+                h6 {
+                    flex: 1;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-items: center;
+                    gap: 30px;
+                    padding: 10px;
+                    color: gray;
 
-                    button {}
+                    span {
+                        color: black;
+                        font-size: 18px;
+                        font-weight: 400;
+                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 
-                    input {
-                        width: 10%;
                     }
                 }
 
@@ -77,7 +105,6 @@
                     width: 30px;
                     padding: 10px;
                     padding-right: 20px;
-                    // background: green;
                     outline: 0;
                     border: 0;
 
