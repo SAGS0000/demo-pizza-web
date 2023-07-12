@@ -29,7 +29,7 @@ const Cart = () => {
     //totalPrice should be quantity * price    
 
     const handleChange = e => {
-        setCart({ ...ITEM, quantity: e.target.value });
+        setCart({ ...ITEM, quantity: parseInt(e.target.value) });
     };
 
     return (
@@ -48,7 +48,7 @@ const Cart = () => {
                                 <span><input
                                     type="number"
                                     name="quantity"
-                                    value={item.quantity}
+                                    value={item?.quantity}
                                     onChange={handleChange} /></span>
                             </h6>
 
