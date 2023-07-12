@@ -1,0 +1,100 @@
+.cart-container {
+    // background-color: rgb(198, 198, 198);
+    padding-top: 3.2rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+
+    .orders {
+        flex: 2.5;
+        height: auto;
+        width: 100%;
+        // background: red;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
+
+        .order-card {
+            height: 150px;
+            background: white;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+            border-radius: 10px;
+            overflow: hidden;
+
+            .order-img {
+                flex: 1;
+                height: 100%;
+                // background: blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+                img {
+                    height: 100%;
+
+                }
+            }
+
+            .order-info {
+                display: flex;
+                flex: 4;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+
+
+                h1 {
+                    padding-inline: 10px;
+                    font-size: 28px;
+                    font-weight: 400;
+                    flex: 3;
+                }
+
+                .quantity {
+                    background: red;
+                    width: 200px;
+
+                    button {}
+
+                    input {
+                        width: 10%;
+                    }
+                }
+
+                button {
+                    all: unset;
+                    width: 30px;
+                    padding: 10px;
+                    padding-right: 20px;
+                    // background: green;
+                    outline: 0;
+                    border: 0;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .checkout {
+        flex: 1.5;
+        background: green;
+
+        .checkout-card {}
+    }
+
+}
