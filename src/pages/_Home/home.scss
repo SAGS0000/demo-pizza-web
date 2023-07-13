@@ -1,0 +1,75 @@
+.home_container {
+    background-image: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?cs=srgb&dl=pexels-pixabay-326333.jpg&fm=jpg');
+    background-size: cover;
+    height: 100vh;
+    color: rgb(198, 198, 198);
+    position: relative;
+    overflow: hidden;
+
+    .home_info {
+        padding-left: 50px;
+        width: 700px;
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        // background-color: white;
+        height: 100vh;
+
+        h1 {
+            font-size: 80px;
+            color: gold;
+            line-height: 50px;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        button {
+            all: unset;
+            background: black;
+            color: white;
+            width: 200px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 25px;
+        }
+    }
+
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        bottom: -100px;
+        right: -160px;
+        width: 650px;
+        height: 650px;
+        // background: white;
+
+        img {
+            object-fit: contain;
+            // mix-blend-mode: color-burn white;
+            border-radius: 100%;
+            width: 100%;
+            animation: circle-spin infinite 20s linear;
+
+        }
+    }
+}
+
+
+@keyframes circle-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
