@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './cart.scss';
 import CheckoutCard from './components/CheckoutCard';
+
+import cancelButton from '../../assets/letterx_83737.png';
 const Cart = () => {
 
     const ITEM = [{
@@ -94,7 +96,9 @@ const Cart = () => {
                             </h6>
 
                             <h6>Price:<br /><span>{item.totalPrice}</span></h6>
-                            <button><img src="https://th.bing.com/th/id/R.3ce100a95c2c36b52db406cf1be06943?rik=kdycEKrJHmv7Tg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_376308.png&ehk=J3fNGglWWQu5Y3%2fUU9y%2f6%2fLO%2bFqR4pAZRMfS%2fX1u6PQ%3d&risl=&pid=ImgRaw&r=0" alt="" /></button>
+                            <button>
+                                <img src={cancelButton} alt="" />
+                            </button>
                         </div>
                     </div>
                 )}
