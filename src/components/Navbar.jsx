@@ -10,11 +10,21 @@ const Navbar = () => {
                 <NavLink to='/' >
                     Home
                 </NavLink>
-                {LINKS.map((link, index) => (
+                <NavLink to='/menu' >
+                    Menu
+                </NavLink>
+                <NavLink to='/cart' className='notification'>
+                    <p>3</p>
+                    Cart
+                </NavLink>
+                <NavLink to='/about' >
+                    About
+                </NavLink>
+                {/* {LINKS.map((link, index) => (
                     <NavLink to={`/${link.toLowerCase()}`} key={index}>
                         {link}
                     </NavLink>
-                ))}
+                ))} */}
                 {/* <a href='/'>Home</a>
                 <a href='/menu'>Menu</a>
                 <a href='/cart'>Cart</a>

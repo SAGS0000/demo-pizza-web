@@ -24,8 +24,8 @@ const Menu = () => {
 
                         </div>
                         <div className='about'>
-                            <h5>{item.name}</h5>
-                            <p>Price: <span>{item.price}</span></p>
+                            <h5>{item.name} <span>₱{item.price}</span></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit earum excepturi ad eligendi. </p>
                             {/* <h6>{item.about}</h6> */}
                         </div>
                     </div>)}

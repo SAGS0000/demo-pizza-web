@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './itemInfo.scss';
 import { useLocation } from 'react-router-dom';
 const ItemInfo = () => {
     const { state } = useLocation();
     console.log(state);
     const { item } = state;
+    const [currentItem, setCurrentItem] = useState(item);
+
+    const handleChange = (e) => {
+        // return () => {
+        //     setCurrentItem({ ...currentItem, quantity: e.target.value });
+        // };
+        setCurrentItem({ ...currentItem, [e.target.name]: e.target.value });
+    };
+    console.log(currentItem);
+
+    const sizes = [
+        { name: 'Small', capacity: '3 pax' },
+        { name: 'Medium', capacity: '5 pax' },
+        { name: 'Large', capacity: '8 pax' },
+    ];
     return (
         <div className="container-item">
             <div className="card">
@@ -15,9 +30,31 @@ const ItemInfo = () => {
                 </div>
                 <div className="about">
                     <div>
-                        <h1>{item.name}</h1>
-                        <h2>Price: <span>{item.price}</span></h2>
-                        <p>{item.about}</p>
+                        <h1>{currentItem.name}</h1>
+                        <h2>Price: <span>{currentItem.price}</span></h2>
+                        <div className="quantity">
+                            <h6>Quantity:
+                                <input
+                                    type="number"
+                                    name="quantity"
+                                    min={1}
+                                    value={currentItem.quantity}
+                                    onChange={handleChange} />
+                            </h6>
+                        </div>
+                        <div className="pizza-size">
+                            <h6>Size:
+                                <select name="size" id="pizza-size" onChange={handleChange}>
+                                    {sizes.map((size) => (
+                                        <option key={size.name} value={size.name}>
+                                            {size.name} for {size.capacity}
+                                        </option>
+                                    ))}
+                                </select>
+                            </h6>
+                        </div>
+
+                        <p>{currentItem.about}</p>
                     </div>
                     <div className='row'>
                         <button>Add to Cart</button>

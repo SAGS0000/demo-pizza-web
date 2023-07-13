@@ -21,6 +21,23 @@
         display: flex;
         gap: 20px;
 
+        .notification {
+            position: relative;
+
+            p {
+                position: absolute;
+                top: -5px;
+                right: -15px;
+                font-size: 12px;
+                background-color: red;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 14px;
+            }
+        }
+
         a {
             text-decoration: none;
             color: white;
