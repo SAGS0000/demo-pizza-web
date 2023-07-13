@@ -2,12 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './navbar.scss';
 const Navbar = () => {
-    const LINKS = ['Home', 'Menu', 'Cart', 'About'];
-
+    const LINKS = ['Menu', 'Cart', 'About'];
     return (
         <div className='navbar'>
             <h1>Pizzeria</h1>
             <div className="links">
+                <NavLink to='/' >
+                    Home
+                </NavLink>
                 {LINKS.map((link, index) => (
                     <NavLink to={`/${link.toLowerCase()}`} key={index}>
                         {link}

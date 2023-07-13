@@ -119,9 +119,17 @@
 
     .checkout {
         flex: 1.5;
-        background: green;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-right: 20px;
 
-        .checkout-card {}
+        .checkout-card {
+            border-radius: 10px;
+            height: 100%;
+            padding: 10px;
+            margin: 10px;
+            background: white;
+        }
     }
 
 }
