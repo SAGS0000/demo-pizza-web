@@ -18,14 +18,16 @@ const Menu = () => {
                         onClick={() => { navigate(`/product/${item.id}?`, { state: { item } }); }}
                     >
 
-                        <div className="pic"
-                            style={{ background: 'red' }}>
-                            <img src="https://media.istockphoto.com/id/521403691/photo/hot-homemade-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=PaISuuHcJWTEVoDKNnxaHy7L2BTUkyYZ06hYgzXmTbo=" alt="" />
-
+                        <div className="pic">
+                            <img src={item.picture} alt="" />
                         </div>
+
+
+
                         <div className='about'>
                             <h5>{item.name} <span>₱{item.price}</span></h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit earum excepturi ad eligendi. </p>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             {/* <h6>{item.about}</h6> */}
                         </div>
                     </div>)}

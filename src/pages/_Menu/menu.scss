@@ -20,7 +20,7 @@
 
     .menu-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         padding: 100px;
         gap: 50px;
         justify-content: center;
@@ -29,62 +29,152 @@
         overflow-y: auto;
 
         .menu-item {
+            padding: 20px;
             display: flex;
+            align-items: center;
+            flex-direction: column;
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            position: relative;
-            min-height: 300px;
+            height: 450px;
             width: 100%;
-            transition: transform .3s ease-in-out;
+
+            .pic {
+                margin: 20px;
+                // background: white;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                // background: red;
+                transition: transform .3s ease-in-out;
+
+
+
+                img {
+                    height: 100%;
+                    width: 100%;
+
+                    object-fit: contain;
+                }
+            }
 
             &:hover {
-                transform: scale(1.1);
+                .pic {
+
+                    transform: scale(1.1);
+                }
+
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             }
 
             &:not(:hover) {
-                transform: scale(1);
-            }
+                .pic {
 
-
-            .pic {
-                flex: 1;
-
-                img {
-                    width: 100%;
+                    transform: scale(1);
                 }
             }
 
-            .about {
-                width: 100%;
-                padding: 10px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                color: #e7e7e7;
-                display: flex;
-                flex-direction: column;
-                background: linear-gradient(360deg, black, transparent);
 
+            .about {
                 h5 {
-                    font-size: 18px;
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: black;
 
                     span {
-                        font-weight: normal;
-                        font-size: 14px;
-                        margin-left: 10px;
-                        color: white
+                        justify-self: flex-end;
                     }
                 }
 
-                p {
-
-                    font-size: 12px;
-                    font-weight: normal;
+                .star-rating {
+                    display: inline-block;
+                    font-size: 0;
+                    /* Remove any spacing between the star elements */
                 }
 
+                .star {
+                    display: inline-block;
+                    width: 20px;
+                    /* Adjust the width of each star */
+                    height: 20px;
+                    /* Adjust the height of each star */
+                    // background-color: gold;
+                    /* Adjust the color of the filled stars */
+                }
+
+                /* Example styles for half-star rating */
+                .star.half {
+                    background-color: transparent;
+                    /* Set the color of half-filled stars to transparent */
+                    position: relative;
+                }
+
+                .star.half:after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 50%;
+                    /* Adjust the width of the half-filled star */
+                    height: 100%;
+                    // background-color: gold;
+                    /* Adjust the color of the half-filled star */
+                }
+
+
+                p {
+                    margin-top: 10px;
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                    line-height: 28px;
+                    // background-color: red;
+                }
             }
+
+
+
+
+            // .pic {
+            //     flex: 1;
+
+            //     img {
+            //         width: 100%;
+            //     }
+            // }
+
+            // .about {
+            //     width: 100%;
+            //     padding: 10px;
+            //     position: absolute;
+            //     bottom: 0;
+            //     left: 0;
+            //     color: #e7e7e7;
+            //     display: flex;
+            //     flex-direction: column;
+            //     background: linear-gradient(360deg, black, transparent);
+
+            //     h5 {
+            //         font-size: 18px;
+
+            //         span {
+            //             font-weight: normal;
+            //             font-size: 14px;
+            //             margin-left: 10px;
+            //             color: white
+            //         }
+            //     }
+
+            //     p {
+
+            //         font-size: 12px;
+            //         font-weight: normal;
+            //     }
+
+            // }
         }
     }
 }
