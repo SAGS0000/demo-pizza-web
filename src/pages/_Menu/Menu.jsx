@@ -2,6 +2,9 @@ import React from 'react';
 import './menu.scss';
 import { ITEM } from './items';
 import { useNavigate } from 'react-router-dom';
+import SortingItem from './components/SortingItem';
+import FilterButton from './components/FilterButton';
+import { BsCart, BsFillStarFill } from 'react-icons/bs';
 const Menu = () => {
     const navigate = useNavigate();
     return (
@@ -9,6 +12,10 @@ const Menu = () => {
             <div className='title'>
                 <h1>Menu</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ipsum, optio velit fuga, asperiores distinctio odio delectus tempora esse maiores quas, tenetur ea eligendi consectetur saepe ducimus! Cum, quas animi?</p>
+            </div>
+            <div className="menu-buttons">
+                <FilterButton />
+                <SortingItem />
             </div>
             <div className="menu-container">
                 {ITEM.map(item =>
@@ -26,10 +33,16 @@ const Menu = () => {
 
                         <div className='about'>
                             <h5>{item.name} <span>₱{item.price}</span></h5>
-
+                            <div className="star-rating">
+                                <BsFillStarFill />
+                                <BsFillStarFill />
+                                <BsFillStarFill />
+                                <BsFillStarFill />
+                                <BsFillStarFill />
+                            </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            {/* <h6>{item.about}</h6> */}
                         </div>
+                        {/* <button><BsCart size={25} />Order Now</button> */}
                     </div>)}
             </div>
         </div>

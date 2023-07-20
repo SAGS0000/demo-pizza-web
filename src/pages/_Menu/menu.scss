@@ -1,9 +1,9 @@
 .container {
     // background: #efffec;
     padding-top: 2.5rem;
-    background-image: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?cs=srgb&dl=pexels-pixabay-326333.jpg&fm=jpg');
+    // background-image: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?cs=srgb&dl=pexels-pixabay-326333.jpg&fm=jpg');
     background-size: cover;
-    color: rgb(198, 198, 198);
+    // color: rgb(198, 198, 198);
 
     .title {
         padding-top: 20px;
@@ -18,10 +18,115 @@
         }
     }
 
+    .menu-buttons {
+        padding: 30px 100px 0px 100px;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: 0;
+            border: 0;
+            cursor: pointer;
+            background-color: gold;
+            color: white;
+            border-radius: 30px;
+            width: 150px;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            gap: 8px;
+            letter-spacing: 2px;
+            transition: background-color 0.2s ease-in-out;
+
+            &:hover {
+                background-color: red;
+            }
+
+
+
+        }
+
+        .drawer {
+            width: 300px;
+            height: 100vh;
+            background-color: #f0f0f0;
+            position: fixed;
+            top: 0;
+            left: -300px;
+            transition: left 0.3s ease;
+            padding: 20px;
+            z-index: 11;
+
+            .range-slider {
+                width: 100%;
+
+                input {
+                    width: 100%;
+                    width: 100%;
+                    height: 15px;
+                    border-radius: 5px;
+                    background: #d3d3d3;
+                    outline: none;
+                    opacity: 0.7;
+                    -webkit-transition: .2s;
+                    transition: opacity .2s;
+                }
+            }
+        }
+
+        .drawer.open {
+            left: 0;
+        }
+
+
+        select {
+
+            appearance: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            border-radius: 30px;
+            width: 200px;
+            cursor: pointer;
+
+            background-size: 20px;
+            background-image: url('../../assets/dropdown-icon.png');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            opacity: .5;
+
+            option {
+                color: rgba(0, 0, 0, .5);
+
+            }
+        }
+
+        /* Hover and focus styles */
+        select:hover {
+            // border-color: #999;
+            // box-shadow: 0 0 10px .5px rgba(0, 0, 0, 0.25);
+
+        }
+
+        select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        /* Optional disabled style */
+        select:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    }
+
     .menu-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        padding: 100px;
+        padding: 20px 100px;
         gap: 50px;
         justify-content: center;
         align-items: center;
@@ -29,6 +134,8 @@
         overflow-y: auto;
 
         .menu-item {
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, .1);
             padding: 20px;
             display: flex;
             align-items: center;
@@ -66,7 +173,7 @@
                     transform: scale(1.1);
                 }
 
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             }
 
             &:not(:hover) {
@@ -91,38 +198,9 @@
                 }
 
                 .star-rating {
-                    display: inline-block;
-                    font-size: 0;
-                    /* Remove any spacing between the star elements */
-                }
-
-                .star {
-                    display: inline-block;
-                    width: 20px;
-                    /* Adjust the width of each star */
-                    height: 20px;
-                    /* Adjust the height of each star */
-                    // background-color: gold;
-                    /* Adjust the color of the filled stars */
-                }
-
-                /* Example styles for half-star rating */
-                .star.half {
-                    background-color: transparent;
-                    /* Set the color of half-filled stars to transparent */
-                    position: relative;
-                }
-
-                .star.half:after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 50%;
-                    /* Adjust the width of the half-filled star */
-                    height: 100%;
-                    // background-color: gold;
-                    /* Adjust the color of the half-filled star */
+                    display: flex;
+                    gap: 2px;
+                    color: gold;
                 }
 
 
@@ -135,46 +213,23 @@
                 }
             }
 
+            button {
+                margin-top: 10px;
+                border-radius: 20px;
+                border: 0;
+                padding: 8px 14px;
+                display: flex;
+                gap: 10px;
+                align-self: start;
+                align-items: center;
+                color: white;
+                font-weight: 400;
+                font-size: 18px;
+                letter-spacing: 1px;
+                outline: 0;
+                background-color: rgb(255, 181, 43);
 
-
-
-            // .pic {
-            //     flex: 1;
-
-            //     img {
-            //         width: 100%;
-            //     }
-            // }
-
-            // .about {
-            //     width: 100%;
-            //     padding: 10px;
-            //     position: absolute;
-            //     bottom: 0;
-            //     left: 0;
-            //     color: #e7e7e7;
-            //     display: flex;
-            //     flex-direction: column;
-            //     background: linear-gradient(360deg, black, transparent);
-
-            //     h5 {
-            //         font-size: 18px;
-
-            //         span {
-            //             font-weight: normal;
-            //             font-size: 14px;
-            //             margin-left: 10px;
-            //             color: white
-            //         }
-            //     }
-
-            //     p {
-
-            //         font-size: 12px;
-            //         font-weight: normal;
-            //     }
-
-            // }
+            }
         }
     }
 }

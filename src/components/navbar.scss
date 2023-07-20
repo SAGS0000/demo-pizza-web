@@ -1,17 +1,18 @@
 .navbar {
-    z-index: 9000;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 80px;
     // border-bottom: 1px solid #454545;
-    background-color: rgb(15, 15, 15);
+    // background-color: rgb(15, 15, 15);
     // background: linear-gradient(black, transparent);
     // background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    background-color: white;
 
     h1 {
         color: gold;
@@ -40,7 +41,7 @@
 
         a {
             text-decoration: none;
-            color: white;
+            color: black;
         }
 
         .active {

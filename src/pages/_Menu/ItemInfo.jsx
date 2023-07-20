@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './itemInfo.scss';
 import { useLocation } from 'react-router-dom';
+import SizeRadioButton from './components/SizeRadioButton';
 const ItemInfo = () => {
     const { state } = useLocation();
     console.log(state);
@@ -25,13 +26,12 @@ const ItemInfo = () => {
             <div className="card">
 
                 <div className="pic">
-                    <img src="https://media.istockphoto.com/id/521403691/photo/hot-homemade-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=PaISuuHcJWTEVoDKNnxaHy7L2BTUkyYZ06hYgzXmTbo=" alt="" />
-                    {/* {item.picture} */}
+                    <img src={item.picture} alt="" />
                 </div>
                 <div className="about">
                     <div>
                         <h1>{currentItem.name}</h1>
-                        <h2>Price: <span>{currentItem.price}</span></h2>
+                        <h2>{currentItem.price}</h2>
                         <div className="quantity">
                             <h6>Quantity:
                                 <input
@@ -42,7 +42,8 @@ const ItemInfo = () => {
                                     onChange={handleChange} />
                             </h6>
                         </div>
-                        <div className="pizza-size">
+                        <p>Size: </p><SizeRadioButton />
+                        {/* <div className="pizza-size">
                             <h6>Size:
                                 <select name="size" id="pizza-size" onChange={handleChange}>
                                     {sizes.map((size) => (
@@ -52,13 +53,11 @@ const ItemInfo = () => {
                                     ))}
                                 </select>
                             </h6>
-                        </div>
+                        </div> */}
 
                         <p>{currentItem.about}</p>
                     </div>
-                    <div className='row'>
-                        <button>Add to Cart</button>
-                    </div>
+                    <button>Add to Cart</button>
                 </div>
 
 
