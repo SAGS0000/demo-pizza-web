@@ -169,6 +169,9 @@
                     height: 40px;
                     transition: background-color .5s ease;
 
+                    &:hover {
+                        background-color: gold;
+                    }
                 }
 
 
@@ -180,7 +183,9 @@
                         color: white;
                         background-color: gold;
                     }
+
                 }
+
 
                 // h6 {
                 //     font-size: 18px;
