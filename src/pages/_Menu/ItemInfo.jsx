@@ -2,11 +2,32 @@ import React, { useEffect, useState } from 'react';
 import './itemInfo.scss';
 import { useLocation } from 'react-router-dom';
 import SizeRadioButton from './components/SizeRadioButton';
+import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
+import StarRating from './components/StarRating';
+
 const ItemInfo = () => {
     const { state } = useLocation();
     console.log(state);
     const { item } = state;
     const [currentItem, setCurrentItem] = useState(item);
+
+    const handleIncrement = () => {
+        setCurrentItem(prev => (
+            {
+                ...prev,
+                quantity: prev.quantity + 1
+            }
+        ));
+    };
+
+    const handleDecrement = () => {
+        setCurrentItem(prev => (
+            {
+                ...prev,
+                quantity: Math.max(prev.quantity - 1, 1)
+            }
+        ));
+    };
 
     const handleChange = (e) => {
         // return () => {
@@ -31,31 +52,43 @@ const ItemInfo = () => {
                 <div className="about">
                     <div>
                         <h1>{currentItem.name}</h1>
-                        <h2>{currentItem.price}</h2>
-                        <div className="quantity">
-                            <h6>Quantity:
-                                <input
-                                    type="number"
-                                    name="quantity"
-                                    min={1}
-                                    value={currentItem.quantity}
-                                    onChange={handleChange} />
-                            </h6>
+                        <div className='price-row'>
+                            <h2>₱{currentItem.price}</h2>
+                            <StarRating />
                         </div>
-                        <p>Size: </p><SizeRadioButton />
-                        {/* <div className="pizza-size">
-                            <h6>Size:
-                                <select name="size" id="pizza-size" onChange={handleChange}>
-                                    {sizes.map((size) => (
-                                        <option key={size.name} value={size.name}>
-                                            {size.name} for {size.capacity}
-                                        </option>
-                                    ))}
-                                </select>
-                            </h6>
-                        </div> */}
-
                         <p>{currentItem.about}</p>
+                        <div className="modifier">
+                            <p>Quantity:
+                                <div className='row'>
+                                    <input
+                                        type="number"
+                                        name="quantity"
+                                        min={1}
+                                        value={currentItem.quantity}
+                                        onChange={handleChange} />
+                                    <div className='arrows'>
+                                        <button
+                                            type="button"
+                                            className='arrow'
+                                            onClick={handleIncrement}>
+                                            <IoIosArrowUp size={20} />
+                                        </button>
+                                        <button type="button"
+                                            className='arrow'
+                                            onClick={handleDecrement}
+                                        >
+                                            <IoIosArrowDown size={20} />
+                                        </button>
+                                    </div>
+                                </div>
+                            </p>
+                            <p>Size:
+
+                                <SizeRadioButton />
+                            </p>
+                        </div>
+
+
                     </div>
                     <button>Add to Cart</button>
                 </div>
