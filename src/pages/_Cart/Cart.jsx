@@ -3,31 +3,13 @@ import './cart.scss';
 import CheckoutCard from './components/CheckoutCard';
 
 import cancelButton from '../../assets/letterx_83737.png';
+import { ITEM } from '../_Menu/items';
+import { IoIosArrowUp } from 'react-icons/io';
+import { BsTrash } from 'react-icons/bs';
 const Cart = () => {
 
-    const ITEM = [{
-        name: 'Lena Douglas',
-        price: 408,
-        quantity: 10,
-        totalPrice: 0
-    }, {
-        name: 'Joshua Taylor',
-        price: 762,
-        quantity: 2,
-        totalPrice: 0
-    }, {
-        name: 'Douglas Roberts',
-        price: 380,
-        quantity: 4,
-        totalPrice: 0
-    }];
-
     const [cart, setCart] = useState();
-    useEffect(() => {
-        if (!cart) {
-            setCart(ITEM);
-        }
-    }, [cart]);
+    const [total, setTotal] = useState(0);
     useEffect(() => {
         if (!cart) {
             const updatedCart = ITEM.map((item) => ({
@@ -38,72 +20,119 @@ const Cart = () => {
         }
     }, [cart]);
 
-    //TODO
-    //quantity cant be changed
-    //totalPrice should be quantity * price    
+    useEffect(() => {
+        if (cart) {
+            setTotal(cart.reduce((acc, item) => acc + item.totalPrice, 0));
+        }
+    }, [cart]);
 
-    const handleChange = (index, e) => {
+    // const handleChange = (index, e) => {
+    //     const updatedCart = cart.map((item, i) => {
+    //         if (index === i) {
+    //             const quantity = parseInt(e.target.value);
+    //             const totalPrice = quantity * item.price;
+    //             return { ...item, quantity, totalPrice };
+    //         }
+    //         return item;
+    //     });
+
+    //     setCart(updatedCart);
+    // };
+    const handleIncrement = (index, e) => {
         const updatedCart = cart.map((item, i) => {
             if (index === i) {
-                const quantity = parseInt(e.target.value);
+                const quantity = Math.min(item.quantity + 1, 99);
                 const totalPrice = quantity * item.price;
                 return { ...item, quantity, totalPrice };
             }
             return item;
         });
-
         setCart(updatedCart);
 
-        // const updatedCart = [...cart];
-        // updatedCart[index].quantity = parseInt(e.target.value);
-        // updatedCart[index].totalPrice = updatedCart[index].quantity * updatedCart[index].price;
-        // setCart(updatedCart);
 
-        // setCart((prevCart) => {
-        //     return prevCart.map((item, i) => {
-        //         if (index === i) {
-        //             return {
-        //                 ...item,
-        //                 quantity: parseInt(e.target.value),
-        //                 totalPrice: item.quantity * item.price
-        //             };
-        //         } else {
-        //             return item;
-        //         }
-        //     });
-        // });
     };
-    console.log(cart);
+
+    const handleDecrement = (index, e) => {
+        const updatedCart = cart.map((item, i) => {
+            if (index === i) {
+                const quantity = Math.max(item.quantity - 1, 1);
+                const totalPrice = quantity * item.price;
+                return { ...item, quantity, totalPrice };
+            }
+            return item;
+        });
+        setCart(updatedCart);
+    };
+
+    const handleDelete = (index) => {
+        const updatedCart = [...cart];
+        updatedCart.splice(index, 1);
+        setCart(updatedCart);
+
+    };
     return (
         <div className="cart-container">
             <div className="orders">
-                {cart?.map((item, index) =>
-                    <div key={item.name} className="order-card">
-                        <div className="order-img">
-                            <img src="https://media.istockphoto.com/id/521403691/photo/hot-homemade-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=PaISuuHcJWTEVoDKNnxaHy7L2BTUkyYZ06hYgzXmTbo=" alt="" />
-                        </div>
-                        <div className="order-info">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {cart?.map((item, index) => (
+                            <tr key={item.id}>
+                                <td>
+                                    <img src={item.picture} alt="Pizza" style={{ width: '100px' }} />
+                                </td>
+                                <td>{item.name}</td>
+                                <td>
 
-                            <h6>Name:<br /><span>{item.name}</span></h6>
-                            <h6>Quantity:
-                                <br />
-                                <span><input
-                                    type="number"
-                                    name="quantity"
-                                    min={1}
-                                    value={item.quantity}
-                                    onChange={(e) => handleChange(index, e)} /></span>
-                            </h6>
+                                    ${item.price.toFixed(2)}
 
-                            <h6>Price:<br /><span>{item.totalPrice}</span></h6>
-                            <button>
-                                <img src={cancelButton} alt="" />
-                            </button>
-                        </div>
-                    </div>
-                )}
+                                </td>
+                                <td className='quantity-column'>
+                                    <button
+                                        type="button"
+                                        className='arrow'
+                                        onClick={(e) => handleDecrement(index, e)}
+
+                                    >
+                                        <IoIosArrowUp size={20}
+                                            style={{ transform: 'rotate(-90deg)' }}
+                                        />
+                                    </button>
+                                    <span>
+                                        {item.quantity}
+                                    </span>
+                                    <button type="button"
+                                        className='arrow'
+                                        onClick={(e) => handleIncrement(index, e)}
+
+                                    >
+                                        <IoIosArrowUp size={20}
+                                            style={{ transform: 'rotate(90deg)' }}
+                                        />
+                                    </button>
+                                </td>
+                                <td>${item.totalPrice.toFixed(2)}</td>
+                                <td className='delete-column'>
+                                    <button
+                                        onClick={() => handleDelete(index)}>
+                                        <BsTrash size={20} />
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div >
-            <CheckoutCard />
+            <CheckoutCard total={total} />
         </div >
     );
 };

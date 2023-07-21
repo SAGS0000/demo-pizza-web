@@ -1,24 +1,98 @@
 .cart-container {
-    // background-color: rgb(198, 198, 198);
-    background-image: url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?cs=srgb&dl=pexels-pixabay-326333.jpg&fm=jpg');
-
-    padding-top: 3.2rem;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
     overflow: hidden;
 
+    padding-top: 4rem;
+    height: 100vh;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
     .orders {
-        flex: 2.5;
+        grid-column: span 2;
         height: auto;
         width: 100%;
-        // background: red;
         overflow-y: scroll;
 
         &::-webkit-scrollbar {
             width: 0;
             background: transparent;
+        }
+
+        table {
+            width: 100%;
+            // height: 100%;
+            padding: 30px;
+
+
+            thead {
+                tr {
+                    th {
+                        padding-bottom: 4px;
+                        border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+                        text-align: left;
+                    }
+                }
+            }
+
+            tbody {
+                font-size: 18px;
+
+                tr {
+
+                    td {
+                        padding-bottom: 4px;
+                        border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+                        text-align: left;
+
+                        button {
+                            outline: 0;
+                            border: 0;
+                            background: none;
+
+                        }
+
+
+
+                        &:nth-child(1) {
+                            padding-top: 4px;
+                        }
+                    }
+
+                    .quantity-column {
+                        height: 116px;
+                        display: flex;
+                        // background-color: red;
+                        align-items: center;
+
+                        span {
+                            padding-bottom: 4px;
+                        }
+
+                        button {
+                            cursor: pointer;
+                            outline: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0;
+                            width: 30%;
+                            background: none;
+                            color: gray;
+                            transition: color 0.5s ease;
+
+                            &:hover {
+                                color: gold;
+                            }
+                        }
+
+                    }
+
+                    .delete-column {
+                        button {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -115,13 +189,79 @@
                 }
             }
         }
+
     }
 
     .checkout {
-        flex: 1.5;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        grid-column: span 1;
         margin-top: 10px;
         margin-bottom: 20px;
         margin-right: 20px;
+
+        .totalCart-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            border: 1px solid rgba($color: #000000, $alpha: .2);
+            border-radius: 10px;
+
+            h1 {
+                border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+                font-size: 24px;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+
+            h3 {
+                display: flex;
+                justify-content: space-between;
+                font-size: 18px;
+                font-weight: 400;
+                color: gray;
+                padding: 8px;
+
+
+            }
+
+            h2 {
+                display: flex;
+                justify-content: space-between;
+                font-size: 18px;
+                font-weight: 500;
+                color: gray;
+                padding: 8px;
+                border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+
+            }
+
+            button {
+                align-self: center;
+
+                margin-top: 30px;
+                cursor: pointer;
+                border-radius: 10px;
+                outline: 0;
+                border: 0;
+                padding: 15px;
+                font-size: 18px;
+                font-weight: 600;
+                color: white;
+                background-color: orange;
+                transition: background-color 0.1s ease-out;
+                width: 150px;
+
+                &:hover {
+                    background-color: red;
+                }
+            }
+
+        }
 
         .checkout-card {
             border-radius: 10px;

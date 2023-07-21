@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './navbar.scss';
 const Navbar = () => {
+    useEffect(() => {
+        window.addEventListener('scroll', setNavbarSize);
+        return () => {
+            window.removeEventListener('scroll', setNavbarSize);
+        };
+    }, []);
+
+    function setNavbarSize() {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+            navbar.classList.add("small");
+        } else {
+            navbar.classList.remove("small");
+        }
+    }
+
     const LINKS = ['Menu', 'Cart', 'About'];
     return (
-        <div className='navbar'>
+        <div className='navbar' id='navbar'>
             <h1>Pizzeria</h1>
             <div className="links">
                 <NavLink to='/' >
@@ -14,7 +30,7 @@ const Navbar = () => {
                     Menu
                 </NavLink>
                 <NavLink to='/cart' className='notification'>
-                    <p>3</p>
+                    {/* <p>3</p> */}
                     Cart
                 </NavLink>
                 <NavLink to='/about' >

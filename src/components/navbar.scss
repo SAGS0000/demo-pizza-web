@@ -13,6 +13,12 @@
     left: 0;
     right: 0;
     background-color: white;
+    transition: all 0.3s; // Add transition for smooth effect
+
+    &.small {
+        // Use & to refer to the parent selector (navbar)
+        padding: 5px 40px; // Define smaller padding
+    }
 
     h1 {
         color: gold;

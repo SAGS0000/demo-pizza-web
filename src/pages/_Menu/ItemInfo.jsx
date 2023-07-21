@@ -15,7 +15,7 @@ const ItemInfo = () => {
         setCurrentItem(prev => (
             {
                 ...prev,
-                quantity: prev.quantity + 1
+                quantity: Math.min(prev.quantity + 1, 99)
             }
         ));
     };
@@ -60,12 +60,14 @@ const ItemInfo = () => {
                         <div className="modifier">
                             <p>Quantity:
                                 <div className='row'>
-                                    <input
+                                    {/* <input
                                         type="number"
                                         name="quantity"
                                         min={1}
+                                        max={50}
                                         value={currentItem.quantity}
-                                        onChange={handleChange} />
+                                        onChange={handleChange} /> */}
+                                    <h6>{currentItem.quantity}</h6>
                                     <div className='arrows'>
                                         <button
                                             type="button"
