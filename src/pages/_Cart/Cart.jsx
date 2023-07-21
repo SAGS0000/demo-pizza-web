@@ -76,7 +76,7 @@ const Cart = () => {
                 <table>
                     <thead>
                         <tr>
-                            <th></th>
+                            <th> </th>
                             <th>Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
@@ -97,28 +97,30 @@ const Cart = () => {
 
                                 </td>
                                 <td className='quantity-column'>
-                                    <button
-                                        type="button"
-                                        className='arrow'
-                                        onClick={(e) => handleDecrement(index, e)}
-
-                                    >
-                                        <IoIosArrowUp size={20}
-                                            style={{ transform: 'rotate(-90deg)' }}
-                                        />
-                                    </button>
                                     <span>
-                                        {item.quantity}
-                                    </span>
-                                    <button type="button"
-                                        className='arrow'
-                                        onClick={(e) => handleIncrement(index, e)}
+                                        <button
+                                            type="button"
+                                            className='arrow'
+                                            onClick={(e) => handleDecrement(index, e)}
 
-                                    >
-                                        <IoIosArrowUp size={20}
-                                            style={{ transform: 'rotate(90deg)' }}
-                                        />
-                                    </button>
+                                        >
+                                            <IoIosArrowUp
+                                                style={{ transform: 'rotate(-90deg)' }}
+                                            />
+                                        </button>
+                                        {item.quantity}
+                                        <button type="button"
+                                            className='arrow'
+                                            onClick={(e) => handleIncrement(index, e)}
+
+                                        >
+                                            <IoIosArrowUp
+                                                style={{
+                                                    transform: 'rotate(90deg)',
+                                                }}
+                                            />
+                                        </button>
+                                    </span>
                                 </td>
                                 <td>${item.totalPrice.toFixed(2)}</td>
                                 <td className='delete-column'>
