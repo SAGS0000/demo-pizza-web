@@ -1,6 +1,5 @@
 .home_container {
     color: rgb(198, 198, 198);
-    // overflow: hidden;
     overflow-x: hidden;
 
     .header {
@@ -111,6 +110,9 @@
             width: 300px;
             height: 300px;
             margin-left: 20px;
+
+            transform: translateX(-150%);
+            opacity: 0;
         }
 
         h2 {
@@ -118,6 +120,10 @@
             font-size: 24px;
             font-weight: 500;
             color: black;
+
+            opacity: 0;
+            transform: translateX(150%);
+
 
             p {
                 margin-top: 14px;
@@ -129,6 +135,177 @@
                 width: 600px;
             }
         }
+
+        &.show {
+            .from-left {
+                animation: fromLeft 1s ease forwards;
+            }
+
+            .from-right {
+                animation: fromRight 1s ease forwards;
+
+            }
+        }
     }
+
+    .top-items-container {
+        padding: 3rem;
+        opacity: 0;
+
+        &.show {
+            animation: fromLeft 1s ease forwards;
+        }
+
+
+        h6 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: black;
+            // background-color: red;
+            position: relative;
+            width: 600px;
+
+            .dash {
+                position: absolute;
+                right: 40%;
+                bottom: 50%;
+                height: 3px;
+                width: 100px;
+                background-color: red;
+            }
+        }
+
+        .top-items {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+
+
+            .menu-item {
+                cursor: pointer;
+                border: 1px solid rgba(0, 0, 0, .1);
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                background: white;
+                border-radius: 10px;
+                overflow: hidden;
+                height: 450px;
+                min-width: 350px;
+
+                .pic {
+                    margin: 20px;
+                    height: 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+                    transition: transform .3s ease-in-out;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                &:hover {
+                    .pic {
+
+                        transform: scale(1.1);
+                    }
+
+                }
+
+                &:not(:hover) {
+                    .pic {
+
+                        transform: scale(1);
+                    }
+                }
+
+
+                .about {
+                    h5 {
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 24px;
+                        font-weight: 500;
+                        color: black;
+
+                        span {
+                            color: brown;
+                            justify-self: flex-end;
+                        }
+                    }
+
+                    .star-rating {
+                        display: flex;
+                        gap: 2px;
+                        color: gold;
+                    }
+
+
+                    p {
+                        margin-top: 10px;
+                        font-size: 18px;
+                        letter-spacing: 1px;
+                        line-height: 28px;
+                    }
+                }
+
+                button {
+                    margin-top: 10px;
+                    border-radius: 20px;
+                    border: 0;
+                    padding: 8px 14px;
+                    display: flex;
+                    gap: 10px;
+                    align-self: start;
+                    align-items: center;
+                    color: white;
+                    font-weight: 400;
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                    outline: 0;
+                    background-color: rgb(255, 181, 43);
+
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes fromLeft {
+    from {
+
+        opacity: 0;
+        transform: translateX(-150%);
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fromRight {
+    from {
+        opacity: 0;
+        transform: translateX(150%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
 
 }
