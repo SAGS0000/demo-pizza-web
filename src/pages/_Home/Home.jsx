@@ -9,12 +9,12 @@ const Home = () => {
     useEffect(() => {
         function isInViewport(el) {
             const rect = el.getBoundingClientRect();
-            const offset = 0;
+            const offset = 50;
             return (
                 rect.top >= -offset &&
                 rect.left >= -offset &&
-                rect.bottom <= 900 &&
-                // rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + 200 &&
+                // rect.bottom <= 900 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset &&
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth) + offset
             );
         }
