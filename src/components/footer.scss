@@ -1,0 +1,19 @@
+.footer {
+    background-color: rgb(255, 170, 42);
+
+    .info {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        height: 250px;
+        justify-content: center;
+        padding: 30px 25px;
+        gap: 5px;
+
+        .g1,
+        .g2,
+        .g3,
+        .g4 {
+            color: black;
+        }
+    }
+}

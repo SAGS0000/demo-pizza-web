@@ -6,12 +6,14 @@ import Menu from './pages/_Menu/Menu';
 import About from './pages/_About/About';
 import ItemInfo from './pages/_Menu/ItemInfo';
 import Cart from './pages/_Cart/Cart';
+import Footer from './components/Footer';
 
 const App = () => {
     return (
         <>
             <BrowserRouter>
                 <Navbar />
+
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/menu" element={<Menu />} />
@@ -19,6 +21,8 @@ const App = () => {
                     <Route path='/cart' element={<Cart />} />
                     <Route path="/about" element={<About />} />
                 </Routes>
+
+
             </BrowserRouter>
         </>
     );
