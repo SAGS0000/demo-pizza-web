@@ -35,3 +35,6 @@ function useScrollAnimation(className) {
 }
 
 export default useScrollAnimation;
+
+
+// add function to component
