@@ -26,18 +26,6 @@ const Cart = () => {
         }
     }, [cart]);
 
-    // const handleChange = (index, e) => {
-    //     const updatedCart = cart.map((item, i) => {
-    //         if (index === i) {
-    //             const quantity = parseInt(e.target.value);
-    //             const totalPrice = quantity * item.price;
-    //             return { ...item, quantity, totalPrice };
-    //         }
-    //         return item;
-    //     });
-
-    //     setCart(updatedCart);
-    // };
     const handleIncrement = (index, e) => {
         const updatedCart = cart.map((item, i) => {
             if (index === i) {
