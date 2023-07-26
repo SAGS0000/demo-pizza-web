@@ -5,6 +5,16 @@ import Footer from '../../../components/Footer';
 const Checkout = () => {
     const [cart, setCart] = useState([]);
     const [paymentMethod, setPaymentMethod] = useState('cash');
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        phone: '',
+        email: '',
+        street: '',
+        barangay: '',
+        city: '',
+        country: ''
+    });
 
     useEffect(() => {
         const updatedCart = ITEM.map((item) => ({
@@ -13,12 +23,10 @@ const Checkout = () => {
         }));
         setCart(updatedCart);
     }, []);
+    const total = cart.reduce((acc, item) => acc + item.totalPrice, 0);
+    const grandTotal = total + 40;
 
-    const [total, setTotal] = useState(0);
-    useEffect(() => {
-        setTotal(cart.reduce((acc, item) => acc + item.totalPrice, 0));
-    }, [cart]);
-    console.log(total);
+    console.log(grandTotal);
     return (
         <>
             <div className="checkout-container">
