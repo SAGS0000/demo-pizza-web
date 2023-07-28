@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import SortingItem from './components/SortingItem';
 import FilterButton from './components/FilterButton';
 import { BsCart, BsFillStarFill } from 'react-icons/bs';
+import Footer from '../../components/Footer';
 const Menu = () => {
     const navigate = useNavigate();
     return (
@@ -45,6 +46,7 @@ const Menu = () => {
                         {/* <button><BsCart size={25} />Order Now</button> */}
                     </div>)}
             </div>
+            <Footer />
         </div>
     );
 };

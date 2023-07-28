@@ -25,27 +25,22 @@ const Navbar = () => {
             <div className="links">
                 <NavLink to='/' >
                     Home
+                    <div className="dash"></div>
                 </NavLink>
                 <NavLink to='/menu' >
                     Menu
+                    <div className="dash"></div>
                 </NavLink>
                 <NavLink to='/cart' className='notification'>
                     {/* <p>3</p> */}
                     Cart
+                    <div className="dash"></div>
                 </NavLink>
                 <NavLink to='/about' >
-                    About
+                    Contact
+                    <div className="dash"></div>
                 </NavLink>
-                {/* {LINKS.map((link, index) => (
-                    <NavLink to={`/${link.toLowerCase()}`} key={index}>
-                        {link}
-                    </NavLink>
-                ))} */}
-                {/* <a href='/'>Home</a>
-                <a href='/menu'>Menu</a>
-                <a href='/cart'>Cart</a>
-                <a href='/checkout'>Checkout</a>
-                <a href='/about'>About</a> */}
+
             </div>
         </div>
     );

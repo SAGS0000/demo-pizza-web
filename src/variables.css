@@ -1,0 +1,37 @@
+:root {
+
+    /* COLORS */
+    --yellow: #ffa60d;
+    --brown: #e87e0c;
+    --orange: #ff5e00;
+    --pastelRed: #e83b0c;
+    --red: #FF210D;
+
+    /* SIZES */
+    --fs1: 8px;
+    --fs2: 16px;
+    --fs3: 24px;
+    --fs4: 32px;
+    --fs5: 40px;
+    --fs6: 48px;
+    --fs7: 56px;
+    --fs8: 64px;
+    --fs9: 72px;
+    --fs10: 80px;
+    --fs11: 88px;
+    --fs12: 96px;
+    --fs13: 104px;
+    --fs14: 112px;
+    --fs15: 120px;
+
+    /* Font Weight */
+    --fw1: 100;
+    --fw2: 200;
+    --fw3: 300;
+    --fw4: 400;
+    --fw5: 500;
+    --fw6: 600;
+    --fw7: 700;
+    --fw8: 800;
+
+}

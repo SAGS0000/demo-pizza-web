@@ -15,8 +15,9 @@ const Footer = () => {
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatum sed cum ducimus officia aperiam velit necessitatibus repellat.</p>
                 </div>
                 <div className="g2">
-                    <h4>LINKS</h4>
+                    <h4>QUICK LINKS</h4>
                     <ul>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/menu">Menu</a></li>
                         <li><a href="/about-us">About Us</a></li>
                         <li><a href="/contact">Contact Us</a></li>
@@ -38,9 +39,17 @@ const Footer = () => {
                         <li><a href="http://twitter.com" target='_blank' rel='noreferrer'><img src={twitter} alt="Twitter" /></a></li>
                         <li><a href="http://instagram.com" target='_blank' rel='noreferrer'><img src={instagram} alt="Instagram" /></a></li>
                     </ul>
+
+                    <h4>HOURS OF OPERATION</h4>
+                    <span>
+                        Mon-Fri: 11:00 AM - 11:00 PM
+                    </span>
+                    <span>
+                        Sat-Sun: 11:00 AM - 12:00 AM
+                    </span>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

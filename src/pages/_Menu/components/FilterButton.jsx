@@ -31,8 +31,9 @@ const FilterButton = () => {
     return (
         <>
             <button
-                ref={buttonRef}
-                onClick={toggleDrawer}>
+            // ref={buttonRef}
+            // onClick={toggleDrawer}
+            >
                 <BsFilterLeft size={25} />
                 FILTER
             </button>
